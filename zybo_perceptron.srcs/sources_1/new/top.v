@@ -23,8 +23,8 @@ module top(
   input  wire        clk,    // PS FCLK0
   input wire         rstn,   // FCLK_RESET0_N (active-low)
   input  wire [1:0]  sw,     // sw[1:0] = inputs x1..x0
-  input  wire        mode,   // 0 = OR, 1 = AND
-  output wire        led0    // output LED
+  input  wire        mode,   // not currently used
+  output wire [2:0]  led    // 3 LEDS [or, and, xor]
 );
   // Register inputs (simple sync)
   reg [1:0] x_sync;
@@ -36,29 +36,44 @@ module top(
         mode_sync <= 1'b0;
     end else begin
         x_sync    <= sw;
-        mode_sync <= mode;
+        mode_sync <= mode; // not currently used
     end
   end
-
-  // Preset weights/bias
-  // OR  -> w=[1,1], b=0
-  // AND -> w=[1,1], b=-1
-  wire signed [7:0] w0 = 8'sd1;
-  wire signed [7:0] w1 = 8'sd1;
-  wire signed [7:0] w2 = 8'sd0, w3 = 8'sd0;
-  wire signed [9:0] b  = mode_sync ? -10'sd1 : 10'sd0;
-
-  wire y_int;
-
-  perceptron #(.N(2)) u_perc (
+  
+  // Perceptron #1: OR
+  wire y_or;
+  perceptron #(.N(2)) u_perc_or (
     .clk(clk),
     .x  (x_sync),
-    .w0 (w0), .w1(w1), .w2(w2), .w3(w3),
-    .b  (b),
-    .y  (y_int)
+    .w0 (8'sd1), .w1(8'sd1), .w2(8'sd0), .w3(8'sd0),
+    .b  (10'sd0),
+    .y  (y_or)
+  );
+  
+  // Perceptron #2: AND
+  wire y_and;
+  perceptron #(.N(2)) u_perc_and (
+    .clk(clk),
+    .x  (x_sync),
+    .w0 (8'sd1), .w1(8'sd1), .w2(8'sd0), .w3(8'sd0),
+    .b  (-10'sd1),
+    .y  (y_and)
+  );
+  
+  // Perceptron #3: X0 AND NOT X1
+  wire y_x0_and_not_x1;
+  perceptron #(.N(2)) u_perc_x0_and_not_x1 (
+    .clk(clk),
+    .x  (x_sync),
+    .w0 (8'sd1), .w1(-8'sd1), .w2(8'sd0), .w3(8'sd0),
+    .b  (10'sd0),
+    .y  (y_x0_and_not_x1)
   );
 
-  assign led0 = y_int; // flip to ~y_int if your LED is active-low
+  assign led[0] = y_or;
+  assign led[1] = y_and;
+  assign led[2] = y_x0_and_not_x1;
+
 endmodule
 
 

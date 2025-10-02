@@ -59,7 +59,7 @@ module system_top_0_0 (
   rstn,
   sw,
   mode,
-  led0
+  led
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rstn, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *)
@@ -70,13 +70,13 @@ input wire clk;
 input wire rstn;
 input wire [1 : 0] sw;
 input wire mode;
-output wire led0;
+output wire [2 : 0] led;
 
   top inst (
     .clk(clk),
     .rstn(rstn),
     .sw(sw),
     .mode(mode),
-    .led0(led0)
+    .led(led)
   );
 endmodule

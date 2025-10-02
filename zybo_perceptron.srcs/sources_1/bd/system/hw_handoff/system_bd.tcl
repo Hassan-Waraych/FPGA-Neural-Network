@@ -169,7 +169,7 @@ proc create_root_design { parentCell } {
 
 
   # Create ports
-  set led0_0 [ create_bd_port -dir O led0_0 ]
+  set led_0 [ create_bd_port -dir O -from 2 -to 0 led_0 ]
   set mode_0 [ create_bd_port -dir I mode_0 ]
   set sw_0 [ create_bd_port -dir I -from 1 -to 0 sw_0 ]
 
@@ -668,7 +668,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins top_0/clk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins top_0/rstn]
   connect_bd_net -net sw_0_1 [get_bd_ports sw_0] [get_bd_pins top_0/sw]
-  connect_bd_net -net top_0_led0 [get_bd_ports led0_0] [get_bd_pins top_0/led0]
+  connect_bd_net -net top_0_led [get_bd_ports led_0] [get_bd_pins top_0/led]
 
   # Create address segments
 

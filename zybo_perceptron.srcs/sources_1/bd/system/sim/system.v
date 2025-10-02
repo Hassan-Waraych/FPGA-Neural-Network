@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Thu Oct  2 14:34:02 2025
+//Date        : Thu Oct  2 15:39:44 2025
 //Host        : DESKTOP-RKGOGPE running 64-bit major release  (build 9200)
 //Command     : generate_target system.bd
 //Design      : system
@@ -32,7 +32,7 @@ module system
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
-    led0_0,
+    led_0,
     mode_0,
     sw_0);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]DDR_addr;
@@ -56,7 +56,7 @@ module system
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK" *) inout FIXED_IO_ps_clk;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB" *) inout FIXED_IO_ps_porb;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB" *) inout FIXED_IO_ps_srstb;
-  output led0_0;
+  output [2:0]led_0;
   input mode_0;
   input [1:0]sw_0;
 
@@ -85,9 +85,9 @@ module system
   wire processing_system7_0_FIXED_IO_PS_PORB;
   wire processing_system7_0_FIXED_IO_PS_SRSTB;
   wire [1:0]sw_0_1;
-  wire top_0_led0;
+  wire [2:0]top_0_led;
 
-  assign led0_0 = top_0_led0;
+  assign led_0[2:0] = top_0_led;
   assign mode_0_1 = mode_0;
   assign sw_0_1 = sw_0[1:0];
   system_processing_system7_0_0 processing_system7_0
@@ -117,7 +117,7 @@ module system
         .USB0_VBUS_PWRFAULT(1'b0));
   system_top_0_0 top_0
        (.clk(processing_system7_0_FCLK_CLK0),
-        .led0(top_0_led0),
+        .led(top_0_led),
         .mode(mode_0_1),
         .rstn(processing_system7_0_FCLK_RESET0_N),
         .sw(sw_0_1));

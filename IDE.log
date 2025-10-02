@@ -13,3 +13,91 @@
 14:40:23 INFO  : Result from executing command 'getProjects': system_wrapper
 14:40:23 INFO  : Result from executing command 'getPlatforms': system_wrapper|C:/VivadoProjects/zybo_perceptron/system_wrapper/export/system_wrapper/system_wrapper.xpfm
 14:40:23 INFO  : Checking for BSP changes to sync application flags for project 'ps_init'...
+14:41:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:41:03 INFO  : Jtag cable 'Digilent Zybo 210279A42744A' is selected.
+14:41:03 INFO  : 'jtag frequency' command is executed.
+14:41:03 INFO  : Context for 'APU' is selected.
+14:41:03 INFO  : System reset is completed.
+14:41:06 INFO  : 'after 3000' command is executed.
+14:41:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42744A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279A42744A-13722093-0"}' command is executed.
+14:41:07 INFO  : FPGA configured successfully with bitstream "C:/VivadoProjects/zybo_perceptron/ps_init/_ide/bitstream/system_wrapper.bit"
+14:41:07 INFO  : Context for 'APU' is selected.
+14:41:07 INFO  : Hardware design and registers information is loaded from 'C:/VivadoProjects/zybo_perceptron/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+14:41:07 INFO  : 'configparams force-mem-access 1' command is executed.
+14:41:07 INFO  : Context for 'APU' is selected.
+14:41:07 INFO  : Sourcing of 'C:/VivadoProjects/zybo_perceptron/ps_init/_ide/psinit/ps7_init.tcl' is done.
+14:41:08 INFO  : 'ps7_init' command is executed.
+14:41:08 INFO  : 'ps7_post_config' command is executed.
+14:41:08 INFO  : 'configparams force-mem-access 0' command is executed.
+14:41:08 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42744A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279A42744A-13722093-0"}
+fpga -file C:/VivadoProjects/zybo_perceptron/ps_init/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/VivadoProjects/zybo_perceptron/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/VivadoProjects/zybo_perceptron/ps_init/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:41:08 INFO  : Launch script is exported to file 'C:\VivadoProjects\zybo_perceptron\.sdk\launch_scripts\single_application_debug\debugger_ps_init-default.tcl'
+15:43:19 INFO  : Hardware specification for platform project 'system_wrapper' is updated.
+15:43:29 INFO  : Result from executing command 'getProjects': system_wrapper
+15:43:29 INFO  : Result from executing command 'getPlatforms': system_wrapper|C:/VivadoProjects/zybo_perceptron/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+15:43:29 INFO  : Checking for BSP changes to sync application flags for project 'ps_init'...
+15:44:00 INFO  : Disconnected from the channel tcfchan#3.
+15:44:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:44:03 INFO  : Jtag cable 'Digilent Zybo 210279A42744A' is selected.
+15:44:03 INFO  : 'jtag frequency' command is executed.
+15:44:03 INFO  : Context for 'APU' is selected.
+15:44:04 INFO  : System reset is completed.
+15:44:07 INFO  : 'after 3000' command is executed.
+15:44:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42744A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279A42744A-13722093-0"}' command is executed.
+15:44:08 INFO  : FPGA configured successfully with bitstream "C:/VivadoProjects/zybo_perceptron/ps_init/_ide/bitstream/system_wrapper.bit"
+15:44:08 INFO  : Context for 'APU' is selected.
+15:44:08 INFO  : Hardware design and registers information is loaded from 'C:/VivadoProjects/zybo_perceptron/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+15:44:08 INFO  : 'configparams force-mem-access 1' command is executed.
+15:44:08 INFO  : Context for 'APU' is selected.
+15:44:08 INFO  : Sourcing of 'C:/VivadoProjects/zybo_perceptron/ps_init/_ide/psinit/ps7_init.tcl' is done.
+15:44:08 INFO  : 'ps7_init' command is executed.
+15:44:08 INFO  : 'ps7_post_config' command is executed.
+15:44:08 INFO  : 'configparams force-mem-access 0' command is executed.
+15:44:08 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42744A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279A42744A-13722093-0"}
+fpga -file C:/VivadoProjects/zybo_perceptron/ps_init/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/VivadoProjects/zybo_perceptron/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/VivadoProjects/zybo_perceptron/ps_init/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:44:08 INFO  : Launch script is exported to file 'C:\VivadoProjects\zybo_perceptron\.sdk\launch_scripts\single_application_debug\debugger_ps_init-default.tcl'
+15:46:21 INFO  : Hardware specification for platform project 'system_wrapper' is updated.
+15:46:51 INFO  : Result from executing command 'getProjects': system_wrapper
+15:46:51 INFO  : Result from executing command 'getPlatforms': system_wrapper|C:/VivadoProjects/zybo_perceptron/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+15:46:51 INFO  : Checking for BSP changes to sync application flags for project 'ps_init'...
+15:46:53 INFO  : The hardware specfication used by project 'ps_init' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+15:46:53 INFO  : The file 'C:\VivadoProjects\zybo_perceptron\ps_init\_ide\bitstream\system_wrapper.bit' stored in project is removed.
+15:46:53 INFO  : The updated bitstream files are copied from platform to folder 'C:\VivadoProjects\zybo_perceptron\ps_init\_ide\bitstream' in project 'ps_init'.
+15:46:53 INFO  : The file 'C:\VivadoProjects\zybo_perceptron\ps_init\_ide\psinit\ps7_init.tcl' stored in project is removed.
+15:46:56 INFO  : The updated ps init files are copied from platform to folder 'C:\VivadoProjects\zybo_perceptron\ps_init\_ide\psinit' in project 'ps_init'.
+15:47:06 INFO  : Disconnected from the channel tcfchan#6.
+15:47:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:47:09 INFO  : Jtag cable 'Digilent Zybo 210279A42744A' is selected.
+15:47:09 INFO  : 'jtag frequency' command is executed.
+15:47:09 INFO  : Context for 'APU' is selected.
+15:47:09 INFO  : System reset is completed.

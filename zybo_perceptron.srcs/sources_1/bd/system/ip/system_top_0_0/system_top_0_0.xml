@@ -123,7 +123,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:0f08ce40</spirit:value>
+            <spirit:value>9:2076d9a8</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -134,7 +134,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:0f08ce40</spirit:value>
+            <spirit:value>9:2076d9a8</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -150,11 +150,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Oct 02 20:34:14 UTC 2025</spirit:value>
+            <spirit:value>Thu Oct 02 21:39:45 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:0f08ce40</spirit:value>
+            <spirit:value>9:2076d9a8</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -166,7 +166,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:ac4ed3f5</spirit:value>
+            <spirit:value>9:e9453e9b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -182,11 +182,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Oct 02 20:34:14 UTC 2025</spirit:value>
+            <spirit:value>Thu Oct 02 21:39:45 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:ac4ed3f5</spirit:value>
+            <spirit:value>9:e9453e9b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -200,11 +200,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Oct 02 20:34:43 UTC 2025</spirit:value>
+            <spirit:value>Thu Oct 02 21:40:10 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:0f08ce40</spirit:value>
+            <spirit:value>9:2076d9a8</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -267,9 +267,13 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>led0</spirit:name>
+        <spirit:name>led</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>wire</spirit:typeName>

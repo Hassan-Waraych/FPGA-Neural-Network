@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Oct  2 14:34:14 2025" VIVADOVERSION="2020.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Oct  2 15:39:45 2025" VIVADOVERSION="2020.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:zybo-z7-10:part0:1.2" DEVICE="7z010" NAME="system" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -119,9 +119,9 @@
         <CONNECTION INSTANCE="top_0" PORT="mode"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="led0_0" SIGIS="undef" SIGNAME="top_0_led0">
+    <PORT DIR="O" LEFT="2" NAME="led_0" RIGHT="0" SIGIS="undef" SIGNAME="top_0_led">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="top_0" PORT="led0"/>
+        <CONNECTION INSTANCE="top_0" PORT="led"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -1318,9 +1318,9 @@
             <CONNECTION INSTANCE="External_Ports" PORT="mode_0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="led0" SIGIS="undef" SIGNAME="top_0_led0">
+        <PORT DIR="O" LEFT="2" NAME="led" RIGHT="0" SIGIS="undef" SIGNAME="top_0_led">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="led0_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="led_0"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

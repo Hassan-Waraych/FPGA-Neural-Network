@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Thu Oct  2 14:34:02 2025
+//Date        : Thu Oct  2 15:39:44 2025
 //Host        : DESKTOP-RKGOGPE running 64-bit major release  (build 9200)
 //Command     : generate_target system_wrapper.bd
 //Design      : system_wrapper
@@ -31,7 +31,7 @@ module system_wrapper
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
-    led0_0,
+    led_0,
     mode_0,
     sw_0);
   inout [14:0]DDR_addr;
@@ -55,7 +55,7 @@ module system_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
-  output led0_0;
+  output [2:0]led_0;
   input mode_0;
   input [1:0]sw_0;
 
@@ -80,7 +80,7 @@ module system_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
-  wire led0_0;
+  wire [2:0]led_0;
   wire mode_0;
   wire [1:0]sw_0;
 
@@ -106,7 +106,7 @@ module system_wrapper
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
-        .led0_0(led0_0),
+        .led_0(led_0),
         .mode_0(mode_0),
         .sw_0(sw_0));
 endmodule

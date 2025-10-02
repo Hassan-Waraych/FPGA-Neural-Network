@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date                      : Thu Oct  2 14:35:59 2025
+| Date                      : Thu Oct  2 15:41:28 2025
 | Host                      : DESKTOP-RKGOGPE running 64-bit major release  (build 9200)
 | Command                   : report_io -file system_wrapper_io_placed.rpt
 | Design                    : system_wrapper
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|           134 |
+|           136 |
 +---------------+
 
 
@@ -168,7 +168,7 @@ Table of Contents
 | G11        |                   |            | VCCBRAM                 | VCCBRAM       |                    |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | G12        |                   |            | GND                     | GND           |                    |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | G13        |                   |            | VCCINT                  | VCCINT        |                    |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| G14        |                   | High Range | IO_0_35                 | User IO       |                    |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| G14        | led_0[2]          | High Range | IO_0_35                 | OUTPUT        | LVCMOS33           |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | G15        | sw_0[0]           | High Range | IO_L19N_T3_VREF_35      | INPUT         | LVCMOS33           |      35 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | G16        |                   |            | GND                     | GND           |                    |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | G17        |                   | High Range | IO_L16P_T2_35           | User IO       |                    |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
@@ -268,8 +268,8 @@ Table of Contents
 | M11        |                   |            | GND                     | GND           |                    |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | M12        |                   |            | VCCINT                  | VCCINT        |                    |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | M13        |                   |            | GND                     | GND           |                    |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
-| M14        | led0_0            | High Range | IO_L23P_T3_35           | OUTPUT        | LVCMOS33           |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
-| M15        |                   | High Range | IO_L23N_T3_35           | User IO       |                    |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| M14        | led_0[0]          | High Range | IO_L23P_T3_35           | OUTPUT        | LVCMOS33           |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| M15        | led_0[1]          | High Range | IO_L23N_T3_35           | OUTPUT        | LVCMOS33           |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | M16        |                   | High Range | VCCO_35                 | VCCO          |                    |      35 |            |      |                     |                      |    3.30 |            |           |          |      |                  |              |                   |              |
 | M17        |                   | High Range | IO_L8P_T1_AD10P_35      | User IO       |                    |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | M18        |                   | High Range | IO_L8N_T1_AD10N_35      | User IO       |                    |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
