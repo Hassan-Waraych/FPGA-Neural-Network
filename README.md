@@ -27,7 +27,7 @@ See below for expected outputs (inputs: `x1, x0`):
 - **Tools:** Xilinx Vivado & Vitis, Block Design for PS FCLK0 integration
 - **Board:** Digilent Zybo Z7 (Zynq-7000 SoC)
 
-## 📷 Suggested Media
+## 📷 Media
 
 **Block Diagram**
 
